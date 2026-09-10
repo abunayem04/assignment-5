@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5E3A" />
+      <stop offset="50%" stop-color="#FF2A6D" />
+      <stop offset="100%" stop-color="#9B51E0" />
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#brandGrad)" />
+  <text x="50%" y="54%" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">DS</text>
+</svg>
