@@ -32,10 +32,10 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2.5 cursor-pointer select-none">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm font-jakarta">
               DS
             </div>
-            <div className="text-xl font-bold tracking-tight">
+            <div className="text-xl font-bold tracking-tight font-jakarta">
               <span className="text-slate-900 font-extrabold">Dev</span>{' '}
               <span className="text-[#FF2A6D] font-extrabold">Stack</span>
             </div>
