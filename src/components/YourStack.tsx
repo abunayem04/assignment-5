@@ -48,7 +48,7 @@ export const YourStack: React.FC<YourStackProps> = ({
 
           <button
             onClick={onRemoveAll}
-            className="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 active:scale-[0.98] transition-all duration-200"
+            className="w-full py-2.5 px-4 rounded-[10px] text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 active:scale-[0.98] transition-all duration-200"
           >
             Remove All
           </button>

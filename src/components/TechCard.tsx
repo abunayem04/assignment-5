@@ -85,7 +85,7 @@ export const TechCard: React.FC<TechCardProps> = ({
         <button
           onClick={() => onAddToStack(technology)}
           disabled={isAdded}
-          className={`w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
+          className={`w-full py-2.5 px-4 rounded-[10px] text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
             isAdded
               ? 'bg-[#F1F5F9] text-slate-600 cursor-not-allowed border border-slate-200'
               : 'bg-[#0B132B] text-white hover:bg-[#1C2541] active:scale-[0.98] shadow-sm'
