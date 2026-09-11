@@ -32,20 +32,14 @@ export const App: React.FC = () => {
     const isExist = selectedTechs.find((item) => item.id === tech.id);
     
     if (isExist) {
-      toast.warning(`${tech.name} is already added to your stack!`, {
-        position: 'top-right',
-        autoClose: 2500,
-      });
+      toast.warning(`${tech.name} is already added to your stack!`);
       return;
     }
 
     const newSelected = [...selectedTechs, tech];
     setSelectedTechs(newSelected);
 
-    toast.success(`🎉 ${tech.name} added to your stack!`, {
-      position: 'top-right',
-      autoClose: 2500,
-    });
+    toast.success(`🎉 ${tech.name} added to your stack!`);
   };
 
   const handleRemoveFromStack = (id: string) => {
@@ -54,10 +48,7 @@ export const App: React.FC = () => {
     setSelectedTechs(updated);
     
     if (itemToRemove) {
-      toast.info(`${itemToRemove.name} removed from stack`, {
-        position: 'top-right',
-        autoClose: 2000,
-      });
+      toast.info(`${itemToRemove.name} removed from stack`);
     }
   };
 
@@ -67,16 +58,13 @@ export const App: React.FC = () => {
     }
     const count = selectedTechs.length;
     setSelectedTechs([]);
-    toast.error(`Removed all ${count} technologies from your stack`, {
-      position: 'top-right',
-      autoClose: 2500,
-    });
+    toast.error(`Removed all ${count} technologies from your stack`);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FCFCFD]">
       <ToastContainer
-        position="top-right"
+        position="bottom-right"
         autoClose={2500}
         hideProgressBar={false}
         newestOnTop
