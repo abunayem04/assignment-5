@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import { Technology } from './types/technology';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TechGrid } from './components/TechGrid';
 import { YourStack } from './components/YourStack';
 import { Footer } from './components/Footer';
+import { Technology } from './types/technology';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const App: React.FC = () => {
-  const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
   const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -63,18 +63,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FCFCFD]">
-      <ToastContainer
-        position="bottom-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-
       <Navbar />
 
       <main className="flex-1">
@@ -105,6 +93,18 @@ export const App: React.FC = () => {
       </main>
 
       <Footer />
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
