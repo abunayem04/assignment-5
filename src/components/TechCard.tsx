@@ -34,7 +34,7 @@ export const TechCard: React.FC<TechCardProps> = ({
 
   return (
     <div
-      className={`bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 ${
+      className={`bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 font-jakarta ${
         isAdded
           ? 'border-2 border-[#FF2A6D] shadow-sm'
           : 'border border-slate-100 shadow-sm hover:shadow-md'
