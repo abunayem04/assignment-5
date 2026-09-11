@@ -33,7 +33,13 @@ export const TechCard: React.FC<TechCardProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-200">
+    <div
+      className={`bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 ${
+        isAdded
+          ? 'border-2 border-[#FF2A6D] shadow-sm'
+          : 'border border-slate-100 shadow-sm hover:shadow-md'
+      }`}
+    >
       <div>
         <div className="flex items-center justify-between mb-4">
           <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 p-1.5 border border-slate-100">
@@ -81,7 +87,7 @@ export const TechCard: React.FC<TechCardProps> = ({
           disabled={isAdded}
           className={`w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
             isAdded
-              ? 'bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200'
+              ? 'bg-[#F1F5F9] text-slate-600 cursor-not-allowed border border-slate-200'
               : 'bg-[#0B132B] text-white hover:bg-[#1C2541] active:scale-[0.98] shadow-sm'
           }`}
         >
