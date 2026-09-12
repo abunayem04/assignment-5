@@ -59,16 +59,16 @@ export const App = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FCFCFD]">
+    <div className="app-layout">
       <Navbar />
 
-      <main className="flex-1">
+      <main className="app-main">
         <Hero />
 
-        <section id="technologies" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <section id="technologies" className="technologies-section">
+          <div className="technologies-grid-layout">
             
-            <div className="lg:col-span-8 xl:col-span-9 order-2 lg:order-1">
+            <div className="grid-left-col">
               <TechGrid
                 technologies={technologies}
                 selectedTechs={selectedTechs}
@@ -77,7 +77,7 @@ export const App = () => {
               />
             </div>
 
-            <div className="lg:col-span-4 xl:col-span-3 order-1 lg:order-2">
+            <div className="grid-right-col">
               <YourStack
                 selectedTechs={selectedTechs}
                 onRemove={handleRemoveFromStack}
@@ -97,4 +97,3 @@ export const App = () => {
 };
 
 export default App;
-

@@ -15,12 +15,12 @@ export const YourStack = ({
   const count = selectedTechs.length;
 
   return (
-    <aside className="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm sticky top-28 self-start">
-      <div className="mb-6">
-        <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+    <aside className="stack-sidebar">
+      <div className="stack-sidebar-header">
+        <h2 className="stack-title">
           Your Stack
         </h2>
-        <p className="text-sm text-slate-400 mt-1 font-normal">
+        <p className="stack-subtitle">
           {count === 0
             ? 'No technologies selected yet.'
             : `${count} Technology Selected`}
@@ -28,14 +28,14 @@ export const YourStack = ({
       </div>
 
       {count === 0 ? (
-        <div className="border border-dashed border-slate-200 rounded-2xl py-12 px-4 text-center">
-          <p className="text-sm font-medium text-slate-400">
+        <div className="stack-empty-box">
+          <p className="stack-empty-text">
             Your stack is empty.
           </p>
         </div>
       ) : (
-        <div className="space-y-4">
-          <div className="space-y-2.5 max-h-[440px] overflow-y-auto pr-1">
+        <div className="stack-body">
+          <div className="stack-items-scroll">
             {selectedTechs.map((tech) => (
               <StackItem
                 key={tech.id}
@@ -45,10 +45,7 @@ export const YourStack = ({
             ))}
           </div>
 
-          <button
-            onClick={onRemoveAll}
-            className="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 active:scale-[0.98] transition-all duration-200"
-          >
+          <button onClick={onRemoveAll} className="btn-remove-all">
             Remove All
           </button>
         </div>
@@ -56,4 +53,3 @@ export const YourStack = ({
     </aside>
   );
 };
-

@@ -13,54 +13,50 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <header className="navbar-header">
+      <div className="navbar-container">
+        <div className="navbar-inner">
           
-          <div className="flex items-center md:hidden">
+          <div className="navbar-mobile-toggle">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 -ml-2 text-slate-700 hover:text-slate-900 focus:outline-none rounded-lg"
+              className="navbar-mobile-btn"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-slate-800" />
+                <X className="menu-icon" />
               ) : (
-                <Menu className="w-6 h-6 text-slate-800" />
+                <Menu className="menu-icon" />
               )}
             </button>
           </div>
 
-          <div className="flex items-center gap-2.5 cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm font-jakarta">
+          <div className="navbar-brand">
+            <div className="navbar-logo-badge">
               DS
             </div>
-            <div className="text-xl font-bold tracking-tight font-jakarta">
-              <span className="text-slate-900 font-extrabold">Dev</span>{' '}
-              <span className="text-brand-pink font-extrabold">Stack</span>
+            <div className="navbar-logo-title">
+              <span className="logo-text-dark">Dev</span>{' '}
+              <span className="logo-text-highlight">Stack</span>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="navbar-links">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  link.active
-                    ? 'text-brand-pink font-semibold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={link.active ? 'nav-link-active' : 'nav-link'}
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          <div className="flex items-center space-x-3 sm:space-x-4">
-            <button className="text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2 transition-colors">
+          <div className="navbar-actions">
+            <button className="btn-navbar-signin">
               Sign In
             </button>
-            <button className="text-sm font-medium text-white bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 active:scale-95">
+            <button className="btn-navbar-signup">
               Sign Up
             </button>
           </div>
@@ -68,17 +64,13 @@ export const Navbar = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg">
+        <div className="navbar-mobile-menu">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                link.active
-                  ? 'bg-rose-50 text-brand-pink font-semibold'
-                  : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
-              }`}
+              className={link.active ? 'navbar-mobile-link-active' : 'navbar-mobile-link'}
             >
               {link.name}
             </a>
@@ -88,4 +80,3 @@ export const Navbar = () => {
     </header>
   );
 };
-

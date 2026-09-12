@@ -8,20 +8,20 @@ interface StackItemProps {
 
 export const StackItem = ({ technology, onRemove }: StackItemProps) => {
   return (
-    <div className="bg-white rounded-xl border border-slate-200/90 p-3 flex items-center justify-between shadow-sm transition-all hover:border-slate-300">
-      <div className="flex items-center space-x-3 min-w-0">
-        <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 p-1 flex items-center justify-center flex-shrink-0">
+    <div className="stack-item-card">
+      <div className="stack-item-info">
+        <div className="stack-item-icon-box">
           <img
             src={technology.icon}
             alt={technology.name}
-            className="w-6 h-6 object-contain"
+            className="stack-item-icon-img"
           />
         </div>
-        <div className="truncate">
-          <h4 className="text-sm font-bold text-slate-900 leading-tight truncate">
+        <div className="stack-item-text">
+          <h4 className="stack-item-title">
             {technology.name}
           </h4>
-          <p className="text-xs text-slate-400 font-medium">
+          <p className="stack-item-category">
             {technology.category}
           </p>
         </div>
@@ -29,11 +29,10 @@ export const StackItem = ({ technology, onRemove }: StackItemProps) => {
 
       <button
         onClick={() => onRemove(technology.id)}
-        className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1.5 rounded-lg transition-colors flex-shrink-0"
+        className="stack-item-remove-btn"
       >
-        <X className="w-4 h-4 stroke-[2]" />
+        <X className="remove-icon" />
       </button>
     </div>
   );
 };
-
