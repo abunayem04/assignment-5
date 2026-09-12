@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star, Check } from 'lucide-react';
 import { Technology } from '../types/technology';
 
@@ -8,11 +7,11 @@ interface TechCardProps {
   onAddToStack: (tech: Technology) => void;
 }
 
-export const TechCard: React.FC<TechCardProps> = ({
+export const TechCard = ({
   technology,
   isAdded,
   onAddToStack,
-}) => {
+}: TechCardProps) => {
   const getBadgeClass = (badge: string) => {
     if (badge === 'Popular' || badge === 'Top SQL' || badge === 'Essential' || badge === 'Containers' || badge === 'Robust') {
       return 'bg-sky-50 text-sky-600 border-sky-100';
@@ -36,7 +35,7 @@ export const TechCard: React.FC<TechCardProps> = ({
     <div
       className={`bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 font-jakarta ${
         isAdded
-          ? 'border-2 border-[#FF2A6D] shadow-sm'
+          ? 'border-2 border-brand-pink shadow-sm'
           : 'border border-slate-100 shadow-sm hover:shadow-md'
       }`}
     >
@@ -85,10 +84,10 @@ export const TechCard: React.FC<TechCardProps> = ({
         <button
           onClick={() => onAddToStack(technology)}
           disabled={isAdded}
-          className={`w-full py-2.5 px-4 rounded-[10px] text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
+          className={`w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 ${
             isAdded
-              ? 'bg-[#F1F5F9] text-slate-600 cursor-not-allowed border border-slate-200'
-              : 'bg-[#0B132B] text-white hover:bg-[#1C2541] active:scale-[0.98] shadow-sm'
+              ? 'bg-slate-100 text-slate-600 cursor-not-allowed border border-slate-200'
+              : 'bg-brand-dark text-white hover:bg-brand-darkHover active:scale-[0.98] shadow-sm'
           }`}
         >
           {isAdded ? (
@@ -104,3 +103,4 @@ export const TechCard: React.FC<TechCardProps> = ({
     </div>
   );
 };
+

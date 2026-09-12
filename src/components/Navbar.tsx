@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -32,12 +32,12 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2.5 cursor-pointer select-none">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm font-jakarta">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm font-jakarta">
               DS
             </div>
             <div className="text-xl font-bold tracking-tight font-jakarta">
               <span className="text-slate-900 font-extrabold">Dev</span>{' '}
-              <span className="text-[#FF2A6D] font-extrabold">Stack</span>
+              <span className="text-brand-pink font-extrabold">Stack</span>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${
                   link.active
-                    ? 'text-[#FF2A6D] font-semibold'
+                    ? 'text-brand-pink font-semibold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
             <button className="text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2 transition-colors">
               Sign In
             </button>
-            <button className="text-sm font-medium text-white bg-gradient-to-r from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] hover:opacity-95 px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 active:scale-95">
+            <button className="text-sm font-medium text-white bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 active:scale-95">
               Sign Up
             </button>
           </div>
@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
                 link.active
-                  ? 'bg-rose-50 text-[#FF2A6D] font-semibold'
+                  ? 'bg-rose-50 text-brand-pink font-semibold'
                   : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
@@ -89,3 +89,4 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
+

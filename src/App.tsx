@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TechGrid } from './components/TechGrid';
@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 import { Technology } from './types/technology';
 import { ToastContainer, toast } from 'react-toastify';
 
-export const App: React.FC = () => {
+export const App = () => {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -110,3 +110,4 @@ export const App: React.FC = () => {
 };
 
 export default App;
+

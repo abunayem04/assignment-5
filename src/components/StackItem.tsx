@@ -1,4 +1,3 @@
-import React from 'react';
 import { X } from 'lucide-react';
 import { Technology } from '../types/technology';
 
@@ -7,7 +6,7 @@ interface StackItemProps {
   onRemove: (id: string) => void;
 }
 
-export const StackItem: React.FC<StackItemProps> = ({ technology, onRemove }) => {
+export const StackItem = ({ technology, onRemove }: StackItemProps) => {
   return (
     <div className="bg-white rounded-xl border border-slate-200/90 p-3 flex items-center justify-between shadow-sm transition-all hover:border-slate-300">
       <div className="flex items-center space-x-3 min-w-0">
@@ -27,7 +26,7 @@ export const StackItem: React.FC<StackItemProps> = ({ technology, onRemove }) =>
           <h4 className="text-sm font-bold text-slate-900 leading-tight truncate">
             {technology.name}
           </h4>
-          <p className="text-[11px] text-slate-400 font-medium">
+          <p className="text-xs text-slate-400 font-medium">
             {technology.category}
           </p>
         </div>
@@ -43,3 +42,4 @@ export const StackItem: React.FC<StackItemProps> = ({ technology, onRemove }) =>
     </div>
   );
 };
+

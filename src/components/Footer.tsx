@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <footer className="border-t border-slate-100 bg-white pt-16 pb-12 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,12 +7,12 @@ export const Footer: React.FC = () => {
           
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] flex items-center justify-center text-white font-bold text-xs font-jakarta">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-bold text-xs font-jakarta">
                 DS
               </div>
               <div className="text-lg font-bold tracking-tight font-jakarta">
                 <span className="text-slate-900 font-extrabold">Dev</span>{' '}
-                <span className="text-[#FF2A6D] font-extrabold">Stack</span>
+                <span className="text-brand-pink font-extrabold">Stack</span>
               </div>
             </div>
             
@@ -81,3 +79,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+

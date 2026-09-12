@@ -1,25 +1,25 @@
-import React from 'react';
-
-export const Hero: React.FC = () => {
+export const Hero = () => {
   return (
     <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+          <div className="w-full lg:max-w-2xl space-y-6 text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
               Build Your Ideal <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] bg-clip-text text-transparent">Development Stack</span>
+              <span className="bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple bg-clip-text text-transparent">
+                Development Stack
+              </span>
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
               Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#technologies"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-white font-medium bg-gradient-to-r from-[#FF5E3A] via-[#FF2A6D] to-[#9B51E0] hover:opacity-95 shadow-sm transition-all duration-200 active:scale-95 text-sm sm:text-base cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-white font-medium bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 shadow-sm transition-all duration-200 active:scale-95 text-sm sm:text-base"
               >
                 Explore Technologies
               </a>
@@ -32,13 +32,12 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="w-full lg:w-auto flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm lg:max-w-md">
               <img
                 src="/assets/banner-stack.png"
-                alt="Dev Stack 3D Architecture Illustration"
+                alt="DevStack Banner"
                 className="w-full h-auto object-contain drop-shadow-xl transition-transform duration-500 hover:scale-[1.02]"
-                loading="eager"
               />
             </div>
           </div>
@@ -48,3 +47,4 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+
