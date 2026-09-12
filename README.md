@@ -37,43 +37,43 @@ DevStack is a simple and clean web application where developers can explore diff
 
 ### 1. What is JSX, and why is it used in React?
 **Answer:**  
-JSX stands for JavaScript XML. It basically lets us write HTML elements directly inside our JavaScript/React code. We use it because it is super easy to read and write our website UI, instead of creating HTML elements using complex `React.createElement()` functions.
+JSX means JavaScript XML. It allows us to write HTML-like syntax directly inside our JavaScript code. We use it in React because it makes building the UI much easier and more readable compared to writing `React.createElement` over and over again.
 
 ---
 
 ### 2. What is the difference between props and state?
 **Answer:**  
-Props are used to send data from a parent component down to a child component, and the child component can only read it, not change it. State is the component's own internal data that can change when a user clicks or does something. Whenever state changes, React automatically re-renders that component to show the updated data on the screen.
+Props are used to pass data down from a parent component to a child, and they are strictly read-only. State, on the other hand, is for data that belongs to the component itself and can change over time. Whenever the state updates, React automatically re-renders the component to show the new data.
 
 ---
 
 ### 3. What does the `useState` hook do, and where did you use it in this project?
 **Answer:**  
-`useState` is a React hook that helps us create and update state variables inside our components. In this project, I used `useState` in `App.tsx` for keeping track of all technologies (`technologies`), the selected items in the sidebar (`selectedTechs`), and the loading state (`isLoading`). I also used it in `Navbar.tsx` for opening and closing the mobile menu (`mobileMenuOpen`).
+`useState` is a hook that lets us add state variables to functional components. In my project, I used it in `App.tsx` to store the fetched `technologies` array, track the `selectedTechs` for the sidebar, and manage the `isLoading` status. I also used it in the Navbar to handle toggling the mobile menu on and off.
 
 ---
 
 ### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 **Answer:**  
-`useEffect` is used to handle side tasks like fetching data from an API or file after the component loads. I used `useEffect` in `App.tsx` with an empty array `[]` so that when the website first opens, it fetches the `technologies.json` file just once and doesn't get stuck in an infinite loading loop.
+`useEffect` lets us run side effects—like fetching data—after the component renders. I used it in `App.tsx` to fetch the `technologies.json` data when the app first loads. By passing an empty dependency array `[]`, I made sure the fetch request only happens once when the component mounts, rather than running repeatedly on every render.
 
 ---
 
 ### 5. Why does every item in a `.map()` list need a unique `key` prop?
 **Answer:**  
-When we show a list using `.map()`, React needs a unique `key` on each item so it knows exactly which specific item was added, removed, or changed. This helps React update only that one item instead of re-rendering the whole entire list, which keeps the website fast.
+When mapping over arrays to display a list, React needs a unique `key` for each item to keep track of them. This helps React figure out exactly which items were added, removed, or changed. This way, it only updates the modified items instead of re-rendering the whole list, which is much better for performance.
 
 ---
 
 ### 6. What is conditional rendering? Show one place you used it (example: the empty stack message).
 **Answer:**  
-Conditional rendering means showing or hiding different UI parts based on whether a condition is true or false. I used it in `YourStack.tsx` where if the stack is empty (`count === 0`), it shows the 'Your stack is empty' box, but if items are selected, it shows the list of technologies and the 'Remove All' button. I also used it on the card buttons to switch between 'Add to Stack' and 'Added to Stack'.
+Conditional rendering is basically using JavaScript logic (like ternary operators) to decide what UI to show. In `YourStack.tsx`, I check if `count === 0`. If that's true, I display the "Your stack is empty" message. Otherwise, it renders the list of selected items and the clear button. I also used it to change the "Add to Stack" button to "Added" when an item is already selected.
 
 ---
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 **Answer:**  
-To pass data from parent to child, we simply send it through **props** (for example: `<TechCard technology={tech} />`). To send something back from child to parent, the parent passes a function to the child as a prop, and when the user clicks a button, the child calls that function with the data (for example: `onAddToStack(tech)`).
+Data goes from parent to child through props (for example, passing `technology={tech}` down to `TechCard`). To send data back up to the parent, the parent passes a function down as a prop. The child component can then call that function and pass the data inside it, like when calling `onAddToStack(tech)` on a button click.
 
 ---
 
