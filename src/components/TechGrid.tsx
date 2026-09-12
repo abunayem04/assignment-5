@@ -18,10 +18,10 @@ export const TechGrid = ({
   return (
     <div className="tech-grid-wrapper">
       <div>
-        <h2 className="tech-grid-title">
+        <h2 className="section-heading">
           Explore the <span className="gradient-text">Technologies</span>
         </h2>
-        <p className="tech-grid-subtitle">
+        <p className="section-subtext">
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
@@ -34,7 +34,7 @@ export const TechGrid = ({
           </p>
         </div>
       ) : (
-        <div className="tech-grid-list">
+        <div className="cards-grid">
           {technologies.map((tech) => (
             <TechCard
               key={tech.id}

@@ -1,4 +1,4 @@
-export const Hero = () => {
+export default function Hero() {
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -12,11 +12,11 @@ export const Hero = () => {
               </span>
             </h1>
             
-            <p className="hero-description">
+            <p className="hero-desc">
               Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
             </p>
 
-            <div className="hero-buttons">
+            <div className="hero-cta">
               <a href="#technologies" className="btn-gradient">
                 Explore Technologies
               </a>
@@ -26,12 +26,12 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image-wrapper">
-            <div className="hero-image-card">
+          <div className="hero-visual">
+            <div className="hero-img-box">
               <img
                 src="/assets/banner-stack.png"
                 alt="DevStack Banner"
-                className="hero-image"
+                className="banner-img"
               />
             </div>
           </div>
@@ -40,4 +40,4 @@ export const Hero = () => {
       </div>
     </section>
   );
-};
+}

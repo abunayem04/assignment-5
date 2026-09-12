@@ -8,20 +8,20 @@ interface StackItemProps {
 
 export const StackItem = ({ technology, onRemove }: StackItemProps) => {
   return (
-    <div className="stack-item-card">
-      <div className="stack-item-info">
-        <div className="stack-item-icon-box">
+    <div className="item-row">
+      <div className="item-details">
+        <div className="item-icon">
           <img
             src={technology.icon}
             alt={technology.name}
-            className="stack-item-icon-img"
+            className="item-img"
           />
         </div>
-        <div className="stack-item-text">
-          <h4 className="stack-item-title">
+        <div className="item-meta">
+          <h4 className="item-name">
             {technology.name}
           </h4>
-          <p className="stack-item-category">
+          <p className="item-cat">
             {technology.category}
           </p>
         </div>
@@ -29,7 +29,7 @@ export const StackItem = ({ technology, onRemove }: StackItemProps) => {
 
       <button
         onClick={() => onRemove(technology.id)}
-        className="stack-item-remove-btn"
+        className="item-remove"
       >
         <X className="remove-icon" />
       </button>

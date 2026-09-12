@@ -12,15 +12,20 @@ export const Navbar = () => {
     { name: 'Contact', href: '#contact', active: false },
   ];
 
+  function toggleMenu() {
+    setMobileMenuOpen(!mobileMenuOpen);
+  }
+
   return (
     <header className="navbar-header">
       <div className="navbar-container">
         <div className="navbar-inner">
           
-          <div className="navbar-mobile-toggle">
+          <div className="mobile-toggle">
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="navbar-mobile-btn"
+              onClick={toggleMenu}
+              className="hamburger-btn"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
                 <X className="menu-icon" />
@@ -31,10 +36,10 @@ export const Navbar = () => {
           </div>
 
           <div className="navbar-brand">
-            <div className="navbar-logo-badge">
+            <div className="logo-badge">
               DS
             </div>
-            <div className="navbar-logo-title">
+            <div className="logo-title">
               <span className="logo-text-dark">Dev</span>{' '}
               <span className="logo-text-highlight">Stack</span>
             </div>
@@ -53,24 +58,25 @@ export const Navbar = () => {
           </nav>
 
           <div className="navbar-actions">
-            <button className="btn-navbar-signin">
+            <button className="btn-signin">
               Sign In
             </button>
-            <button className="btn-navbar-signup">
+            <button className="btn-signup">
               Sign Up
             </button>
           </div>
         </div>
       </div>
 
+      {/* mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="navbar-mobile-menu">
+        <div className="mobile-nav">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={link.active ? 'navbar-mobile-link-active' : 'navbar-mobile-link'}
+              className={link.active ? 'mobile-link-active' : 'mobile-link'}
             >
               {link.name}
             </a>

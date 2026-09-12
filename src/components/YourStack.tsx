@@ -7,35 +7,32 @@ interface YourStackProps {
   onRemoveAll: () => void;
 }
 
-export const YourStack = ({
-  selectedTechs,
-  onRemove,
-  onRemoveAll,
-}: YourStackProps) => {
+function YourStack({ selectedTechs, onRemove, onRemoveAll }: YourStackProps) {
   const count = selectedTechs.length;
+  const isEmpty = count === 0;
 
   return (
-    <aside className="stack-sidebar">
-      <div className="stack-sidebar-header">
-        <h2 className="stack-title">
+    <aside className="sidebar">
+      <div className="sidebar-top">
+        <h2 className="sidebar-title">
           Your Stack
         </h2>
-        <p className="stack-subtitle">
-          {count === 0
+        <p className="sidebar-subtitle">
+          {isEmpty
             ? 'No technologies selected yet.'
             : `${count} Technology Selected`}
         </p>
       </div>
 
-      {count === 0 ? (
-        <div className="stack-empty-box">
-          <p className="stack-empty-text">
+      {isEmpty ? (
+        <div className="empty-state">
+          <p className="empty-msg">
             Your stack is empty.
           </p>
         </div>
       ) : (
-        <div className="stack-body">
-          <div className="stack-items-scroll">
+        <div className="sidebar-body">
+          <div className="items-list">
             {selectedTechs.map((tech) => (
               <StackItem
                 key={tech.id}
@@ -45,11 +42,13 @@ export const YourStack = ({
             ))}
           </div>
 
-          <button onClick={onRemoveAll} className="btn-remove-all">
+          <button onClick={onRemoveAll} className="remove-all-btn">
             Remove All
           </button>
         </div>
       )}
     </aside>
   );
-};
+}
+
+export default YourStack;

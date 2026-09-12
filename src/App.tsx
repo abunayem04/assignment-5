@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
+import Hero from './components/Hero';
 import { TechGrid } from './components/TechGrid';
-import { YourStack } from './components/YourStack';
+import YourStack from './components/YourStack';
 import { Footer } from './components/Footer';
 import { Technology } from './types/technology';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +12,7 @@ export const App = () => {
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // load tech data on mount
   useEffect(() => {
     fetch('/technologies.json')
       .then((res) => res.json())
@@ -65,10 +66,10 @@ export const App = () => {
       <main className="app-main">
         <Hero />
 
-        <section id="technologies" className="technologies-section">
-          <div className="technologies-grid-layout">
+        <section id="technologies" className="tech-section">
+          <div className="main-grid">
             
-            <div className="grid-left-col">
+            <div className="content-area">
               <TechGrid
                 technologies={technologies}
                 selectedTechs={selectedTechs}
@@ -77,7 +78,7 @@ export const App = () => {
               />
             </div>
 
-            <div className="grid-right-col">
+            <div className="sidebar-area">
               <YourStack
                 selectedTechs={selectedTechs}
                 onRemove={handleRemoveFromStack}

@@ -12,6 +12,7 @@ export const TechCard = ({
   isAdded,
   onAddToStack,
 }: TechCardProps) => {
+  // pick badge color based on the badge text
   const getBadgeClass = (badge: string) => {
     switch (badge) {
       case 'Popular':
@@ -35,15 +36,17 @@ export const TechCard = ({
     }
   };
 
+  const cardClass = isAdded ? 'tech-card-selected' : 'tech-card';
+
   return (
-    <div className={`font-jakarta ${isAdded ? 'tech-card-selected' : 'tech-card'}`}>
+    <div className={cardClass}>
       <div>
-        <div className="tech-card-top">
-          <div className="tech-icon-box">
+        <div className="card-header">
+          <div className="icon-wrapper">
             <img
               src={technology.icon}
               alt={technology.name}
-              className="tech-icon-img"
+              className="icon-img"
             />
           </div>
           <span className={`tech-badge ${getBadgeClass(technology.badge)}`}>
@@ -51,24 +54,24 @@ export const TechCard = ({
           </span>
         </div>
 
-        <h3 className="tech-card-title">
+        <h3 className="card-title">
           {technology.name}
         </h3>
 
-        <p className="tech-card-description">
+        <p className="tech-desc">
           {technology.description}
         </p>
       </div>
 
       <div>
-        <div className="tech-card-meta">
-          <span className="tech-category-pill">
+        <div className="tech-meta">
+          <span className="category-tag">
             {technology.category}
           </span>
-          <span className="tech-difficulty-text">
+          <span className="difficulty-label">
             {technology.difficulty}
           </span>
-          <div className="tech-rating-box">
+          <div className="rating">
             <Star className="star-icon" />
             <span>{technology.rating.toFixed(1)}</span>
           </div>
@@ -77,7 +80,7 @@ export const TechCard = ({
         <button
           onClick={() => onAddToStack(technology)}
           disabled={isAdded}
-          className={isAdded ? 'btn-already-added' : 'btn-add-to-stack'}
+          className={isAdded ? 'added-btn' : 'add-btn'}
         >
           {isAdded ? (
             <>
