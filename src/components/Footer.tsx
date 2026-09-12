@@ -21,13 +21,13 @@ export const Footer = () => {
             </p>
 
             <div className="flex items-center space-x-5 pt-2 text-sm font-medium text-slate-600">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-slate-900 transition-colors">
+              <a href="https://github.com" target="_blank" className="hover:text-slate-900 transition-colors">
                 GitHub
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-slate-900 transition-colors">
+              <a href="https://twitter.com" target="_blank" className="hover:text-slate-900 transition-colors">
                 Twitter
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-slate-900 transition-colors">
+              <a href="https://linkedin.com" target="_blank" className="hover:text-slate-900 transition-colors">
                 LinkedIn
               </a>
             </div>

@@ -21,7 +21,6 @@ export const Navbar = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 -ml-2 text-slate-700 hover:text-slate-900 focus:outline-none rounded-lg"
-              aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6 text-slate-800" />
@@ -31,7 +30,7 @@ export const Navbar = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-2.5 cursor-pointer select-none">
+          <div className="flex items-center gap-2.5 cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm font-jakarta">
               DS
             </div>

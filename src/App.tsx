@@ -10,17 +10,14 @@ import { ToastContainer, toast } from 'react-toastify';
 export const App = () => {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch('/technologies.json')
       .then((res) => res.json())
-      .then((data: Technology[]) => {
+      .then((data) => {
         setTechnologies(data);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 300);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -94,17 +91,7 @@ export const App = () => {
 
       <Footer />
 
-      <ToastContainer
-        position="bottom-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer position="bottom-right" autoClose={2500} />
     </div>
   );
 };

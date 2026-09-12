@@ -46,11 +46,6 @@ export const TechCard = ({
               src={technology.icon}
               alt={technology.name}
               className="w-7 h-7 object-contain"
-              loading="lazy"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg';
-              }}
             />
           </div>
           <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${getBadgeClass(technology.badge)}`}>

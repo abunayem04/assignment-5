@@ -15,11 +15,6 @@ export const StackItem = ({ technology, onRemove }: StackItemProps) => {
             src={technology.icon}
             alt={technology.name}
             className="w-6 h-6 object-contain"
-            loading="lazy"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg';
-            }}
           />
         </div>
         <div className="truncate">
@@ -35,7 +30,6 @@ export const StackItem = ({ technology, onRemove }: StackItemProps) => {
       <button
         onClick={() => onRemove(technology.id)}
         className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1.5 rounded-lg transition-colors flex-shrink-0"
-        aria-label={`Remove ${technology.name} from stack`}
       >
         <X className="w-4 h-4 stroke-[2]" />
       </button>
