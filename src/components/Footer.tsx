@@ -1,3 +1,5 @@
+import logoIcon from '../assets/logo-icon.svg';
+
 export const Footer = () => {
   return (
     <footer className="footer-section">
@@ -5,22 +7,21 @@ export const Footer = () => {
         
         <div className="footer-grid">
           
+          {/* about col */}
           <div className="footer-about">
-            <div className="footer-logo-row">
-              <div className="footer-badge">
-                DS
-              </div>
+            <div className="flex items-center gap-2.5">
+              <img src={logoIcon} alt="DevStack Logo" className="w-8 h-8 rounded-lg shadow-sm" />
               <div className="logo-title">
                 <span className="logo-text-dark">Dev</span>{' '}
                 <span className="logo-text-highlight">Stack</span>
               </div>
             </div>
             
-            <p className="footer-tagline">
+            <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
               Curated tools, technologies, and resources for developers building modern software.
             </p>
 
-            <div className="social-row">
+            <div className="flex items-center space-x-5 pt-2 text-sm font-medium text-slate-600">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 GitHub
               </a>
@@ -33,10 +34,9 @@ export const Footer = () => {
             </div>
           </div>
 
+          {/* product links */}
           <div className="footer-col">
-            <h4 className="col-heading">
-              Product
-            </h4>
+            <h4 className="col-heading">Product</h4>
             <ul className="col-links">
               <li><a href="#" className="footer-link">Home</a></li>
               <li><a href="#technologies" className="footer-link">Technologies</a></li>
@@ -44,10 +44,9 @@ export const Footer = () => {
             </ul>
           </div>
 
+          {/* company links */}
           <div className="footer-col">
-            <h4 className="col-heading">
-              Company
-            </h4>
+            <h4 className="col-heading">Company</h4>
             <ul className="col-links">
               <li><a href="#about" className="footer-link">About</a></li>
               <li><a href="#contact" className="footer-link">Contact</a></li>
@@ -56,9 +55,7 @@ export const Footer = () => {
           </div>
 
           <div className="footer-col-wide">
-            <h4 className="col-heading">
-              Legal
-            </h4>
+            <h4 className="col-heading">Legal</h4>
             <ul className="col-links">
               <li><a href="#privacy" className="footer-link">Privacy Policy</a></li>
               <li><a href="#terms" className="footer-link">Terms of Service</a></li>

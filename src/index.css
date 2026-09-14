@@ -9,241 +9,22 @@ body {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
-@layer components {
-  /* layout */
-  .app-body {
-    @apply bg-[#FCFCFD] text-slate-900 antialiased font-sans;
-  }
-
-  .app-layout {
-    @apply min-h-screen flex flex-col bg-[#FCFCFD];
-  }
-
-  .app-main { @apply flex-1; }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple bg-clip-text text-transparent;
-  }
-
-  .gradient-badge {
-    @apply bg-gradient-to-br from-brand-orange via-brand-pink to-brand-purple text-white font-bold shadow-sm;
-  }
-
-  .logo-text-dark { @apply text-slate-900 font-extrabold; }
-  .logo-text-highlight { @apply text-brand-pink font-extrabold; }
-
-  .btn-gradient {
-    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-white font-medium bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 shadow-sm transition-all duration-200 active:scale-95 text-sm sm:text-base;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-slate-700 font-medium bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 text-sm sm:text-base;
-  }
-
-  .desktop-break { @apply hidden sm:inline; }
-
-  .menu-icon { @apply w-6 h-6 text-slate-800; }
-  .star-icon { @apply w-3.5 h-3.5 fill-amber-400 text-amber-400; }
-  .check-icon { @apply w-4 h-4 text-emerald-500 stroke-[3]; }
-  .remove-icon { @apply w-4 h-4 stroke-[2]; }
-  .loading-spinner { @apply w-10 h-10 text-brand-pink animate-spin; }
-  .loading-text { @apply text-slate-600 font-medium text-sm; }
-
-  /* page grid for technologies */
-  .tech-section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16; }
-  .main-grid { @apply grid grid-cols-1 lg:grid-cols-12 gap-8 items-start; }
-  .content-area { @apply lg:col-span-8 xl:col-span-9 order-2 lg:order-1; }
-  .sidebar-area { @apply lg:col-span-4 xl:col-span-3 order-1 lg:order-2; }
-
-  /* hero */
-  .hero-section { @apply relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden; }
-  .hero-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
-
-  .hero-layout {
-    @apply flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8;
-  }
-
-  .hero-content { @apply w-full lg:max-w-2xl space-y-6 text-left; }
-
-  .hero-title {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight;
-  }
-
-  .hero-desc { @apply text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed; }
-  .hero-cta { @apply flex flex-wrap items-center gap-4 pt-2; }
-  .hero-visual { @apply w-full lg:w-auto flex justify-center lg:justify-end; }
-  .hero-img-box { @apply relative w-full max-w-sm lg:max-w-md; }
-
-  /* navbar */
-  .navbar-header {
-    @apply sticky top-0 z-50 backdrop-blur-md border-b border-slate-100 transition-all;
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  .navbar-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
-  .navbar-inner { @apply flex items-center justify-between h-20; }
-  .mobile-toggle { @apply flex items-center md:hidden; }
-  .hamburger-btn { @apply p-2 -ml-2 text-slate-700 hover:text-slate-900 focus:outline-none rounded-lg; }
-  .navbar-brand { @apply flex items-center gap-2.5 cursor-pointer; }
-
-  .logo-badge {
-    @apply w-10 h-10 rounded-xl gradient-badge flex items-center justify-center text-sm tracking-wider font-jakarta;
-  }
-
-  .logo-title { @apply text-xl font-bold tracking-tight font-jakarta; }
-  .navbar-links { @apply hidden md:flex items-center space-x-8; }
-  .nav-link { @apply text-sm font-medium transition-colors text-slate-600 hover:text-slate-900; }
-  .nav-link-active { @apply text-sm font-semibold transition-colors text-brand-pink; }
-  .navbar-actions { @apply flex items-center space-x-3 sm:space-x-4; }
-  .btn-signin { @apply text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2 transition-colors; }
-
-  .btn-signup {
-    @apply text-sm font-medium text-white bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 active:scale-95;
-  }
-
-  .mobile-nav { @apply md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg; }
-  .mobile-link { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors text-slate-700 hover:bg-slate-50 hover:text-slate-900; }
-  .mobile-link-active { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors bg-rose-50 text-brand-pink font-semibold; }
-
-  /* cards */
-  .tech-card {
-    @apply bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 border border-slate-100 shadow-sm hover:shadow-md;
-  }
-
-  .tech-card-selected {
-    @apply bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 border-2 border-brand-pink shadow-sm;
-  }
-
-  .card-header { @apply flex items-center justify-between mb-4; }
-
-  .icon-wrapper {
-    @apply w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 p-1.5 border border-slate-100;
-  }
-
-  .icon-img { @apply w-7 h-7 object-contain; }
-  .tech-badge { @apply text-xs font-semibold px-2.5 py-1 rounded-full border; }
-  .card-title { @apply text-xl font-bold text-slate-900 tracking-tight mb-2; }
-  .tech-desc { @apply text-sm text-slate-500 leading-relaxed mb-6 line-clamp-3; }
-
-  .tech-meta {
-    @apply flex items-center justify-between text-xs pt-3 pb-5 border-t border-slate-50 text-slate-600;
-  }
-
-  .category-tag { @apply bg-slate-50 text-slate-700 font-medium px-2.5 py-1 rounded-md border border-slate-100; }
-  .difficulty-label { @apply text-slate-500 font-normal; }
-  .rating { @apply flex items-center gap-1 font-semibold text-slate-700; }
-
-  .add-btn {
-    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 bg-brand-dark text-white hover:bg-brand-darkHover active:scale-[0.98] shadow-sm;
-  }
-
-  .added-btn {
-    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 bg-slate-100 text-slate-600 cursor-not-allowed border border-slate-200;
-  }
-
-  .tech-grid-wrapper { @apply space-y-6; }
-  .section-heading { @apply text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight; }
-  .section-subtext { @apply text-sm sm:text-base text-slate-500 mt-2 font-normal; }
-  .tech-grid-loading { @apply flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm space-y-4; }
-  .cards-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
-
-  /* your stack panel */
-  .sidebar {
-    @apply bg-white rounded-3xl border border-slate-100 p-6 shadow-sm sticky top-28 self-start;
-  }
-
-  .sidebar-top { @apply mb-6; }
-  .sidebar-title { @apply text-xl font-bold text-slate-900 tracking-tight; }
-  .sidebar-subtitle { @apply text-sm text-slate-400 mt-1 font-normal; }
-  .empty-state { @apply border border-dashed border-slate-200 rounded-2xl py-12 px-4 text-center; }
-  .empty-msg { @apply text-sm font-medium text-slate-400; }
-  .sidebar-body { @apply space-y-4; }
-  .items-list { @apply space-y-2.5 max-h-[440px] overflow-y-auto pr-1; }
-
-  .remove-all-btn {
-    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 active:scale-[0.98] transition-all duration-200;
-  }
-
-  .item-row {
-    @apply bg-white rounded-xl border border-slate-200/90 p-3 flex items-center justify-between shadow-sm transition-all hover:border-slate-300;
-  }
-
-  .item-details { @apply flex items-center space-x-3 min-w-0; }
-  .item-icon { @apply w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 p-1 flex items-center justify-center flex-shrink-0; }
-  .item-img { @apply w-6 h-6 object-contain; }
-  .item-meta { @apply truncate; }
-  .item-name { @apply text-sm font-bold text-slate-900 leading-tight truncate; }
-  .item-cat { @apply text-xs text-slate-400 font-medium; }
-  .item-remove { @apply text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1.5 rounded-lg transition-colors flex-shrink-0; }
-
-  /* footer */
-  .footer-section {
-    @apply border-t border-slate-100 bg-white pt-16 pb-12 mt-24;
-  }
-
-  .footer-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
-
-  .footer-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-slate-100;
-  }
-
-  .footer-about { @apply lg:col-span-5 space-y-4; }
-  .footer-logo-row { @apply flex items-center gap-2.5; }
-  .footer-badge { @apply w-8 h-8 rounded-lg gradient-badge flex items-center justify-center text-xs font-jakarta; }
-  .footer-tagline { @apply text-sm text-slate-500 max-w-sm leading-relaxed; }
-  .social-row { @apply flex items-center space-x-5 pt-2 text-sm font-medium text-slate-600; }
-  .social-link { @apply hover:text-slate-900 transition-colors; }
-  .footer-col { @apply lg:col-span-2 space-y-3; }
-  .footer-col-wide { @apply lg:col-span-3 space-y-3; }
-  .col-heading { @apply text-xs font-bold text-slate-900 uppercase tracking-wider; }
-  .col-links { @apply space-y-2.5 text-sm text-slate-500; }
-  .footer-link { @apply hover:text-slate-900 transition-colors; }
-
-  .footer-bar {
-    @apply pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 space-y-4 sm:space-y-0;
-  }
-
-  .legal-links { @apply flex items-center space-x-6; }
+/* gradient stuff i use in multiple places */
+.gradient-text {
+  background: linear-gradient(to right, #FF5E3A, #FF2A6D, #9B51E0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* badge colors */
-.badge-blue {
-  background-color: #f0f9ff;
-  color: #0284c7;
-  border-color: #e0f2fe;
+.gradient-badge {
+  background: linear-gradient(to bottom right, #FF5E3A, #FF2A6D, #9B51E0);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
 }
 
-.badge-green {
-  background-color: #ecfdf5;
-  color: #059669;
-  border-color: #d1fae5;
-}
-
-.badge-rose {
-  background-color: #fff1f2;
-  color: #e11d48;
-  border-color: #ffe4e6;
-}
-
-.badge-amber {
-  background-color: #fffbeb;
-  color: #b45309;
-  border-color: #fef3c7;
-}
-
-.badge-teal {
-  background-color: #f0fdfa;
-  color: #0d9488;
-  border-color: #ccfbf1;
-}
-
-.badge-default {
-  background-color: #f8fafc;
-  color: #475569;
-  border-color: #f1f5f9;
-}
-
-/* banner hover effect */
+/* banner image hover zoom */
 .banner-img {
   width: 100%;
   height: auto;
@@ -254,4 +35,148 @@ body {
 
 .banner-img:hover {
   transform: scale(1.02);
+}
+
+@layer components {
+  .app-body {
+    @apply bg-[#FCFCFD] text-slate-900 antialiased font-sans;
+  }
+
+  .app-layout {
+    @apply min-h-screen flex flex-col bg-[#FCFCFD];
+  }
+
+  /* navbar */
+  .navbar-header {
+    @apply sticky top-0 z-50 backdrop-blur-md border-b border-slate-100 transition-all;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .navbar-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .navbar-inner { @apply flex items-center justify-between h-20; }
+  .navbar-brand { @apply flex items-center gap-2.5 cursor-pointer; }
+  .logo-title { @apply text-xl font-bold tracking-tight font-jakarta; }
+  .logo-text-dark { @apply text-slate-900 font-extrabold; }
+  .logo-text-highlight { @apply text-brand-pink font-extrabold; }
+  .navbar-links { @apply hidden md:flex items-center space-x-8; }
+  .nav-link { @apply text-sm font-medium transition-colors text-slate-600 hover:text-slate-900; }
+  .nav-link-active { @apply text-sm font-semibold transition-colors text-brand-pink; }
+  .navbar-actions { @apply flex items-center space-x-3 sm:space-x-4; }
+  .btn-signin { @apply text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2 transition-colors; }
+  .btn-signup {
+    @apply text-sm font-medium text-white bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 active:scale-95;
+  }
+  .mobile-nav { @apply md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg; }
+  .mobile-link { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors text-slate-700 hover:bg-slate-50 hover:text-slate-900; }
+  .mobile-link-active { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors bg-rose-50 text-brand-pink font-semibold; }
+
+  /* hero section */
+  .hero-section { @apply relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden; }
+  .hero-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .hero-layout {
+    @apply flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8;
+  }
+  .hero-content { @apply w-full lg:max-w-2xl space-y-6 text-left; }
+  .hero-title {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight;
+  }
+
+  /* buttons */
+  .btn-gradient {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-white font-medium bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 shadow-sm transition-all duration-200 active:scale-95 text-sm sm:text-base;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-slate-700 font-medium bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 text-sm sm:text-base;
+  }
+
+  /* technology section grid */
+  .tech-section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16; }
+  .main-grid { @apply grid grid-cols-1 lg:grid-cols-12 gap-8 items-start; }
+  .content-area { @apply lg:col-span-8 xl:col-span-9 order-2 lg:order-1; }
+  .sidebar-area { @apply lg:col-span-4 xl:col-span-3 order-1 lg:order-2; }
+
+  .section-heading { @apply text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight; }
+  .section-subtext { @apply text-sm sm:text-base text-slate-500 mt-2 font-normal; }
+  .cards-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
+
+  /* tech card */
+  .tech-card {
+    @apply bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 border border-slate-100 shadow-sm hover:shadow-md;
+  }
+  .tech-card-selected {
+    @apply bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 border-2 border-brand-pink shadow-sm;
+  }
+  .card-header { @apply flex items-center justify-between mb-4; }
+  .card-title { @apply text-xl font-bold text-slate-900 tracking-tight mb-2; }
+  .tech-badge { @apply text-xs font-semibold px-2.5 py-1 rounded-full border; }
+
+  .add-btn {
+    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 bg-brand-dark text-white hover:bg-brand-darkHover active:scale-[0.98] shadow-sm;
+  }
+  .added-btn {
+    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 bg-slate-100 text-slate-600 cursor-not-allowed border border-slate-200;
+  }
+
+  /* sidebar / your stack */
+  .sidebar {
+    @apply bg-white rounded-3xl border border-slate-100 p-6 shadow-sm sticky top-28 self-start;
+  }
+  .sidebar-title { @apply text-xl font-bold text-slate-900 tracking-tight; }
+  .remove-all-btn {
+    @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 active:scale-[0.98] transition-all duration-200;
+  }
+  .item-row {
+    @apply bg-white rounded-xl border border-slate-200/90 p-3 flex items-center justify-between shadow-sm transition-all hover:border-slate-300;
+  }
+
+  /* footer */
+  .footer-section {
+    @apply border-t border-slate-100 bg-white pt-16 pb-12 mt-24;
+  }
+  .footer-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-slate-100;
+  }
+  .footer-about { @apply lg:col-span-5 space-y-4; }
+  .footer-col { @apply lg:col-span-2 space-y-3; }
+  .footer-col-wide { @apply lg:col-span-3 space-y-3; }
+  .col-heading { @apply text-xs font-bold text-slate-900 uppercase tracking-wider; }
+  .col-links { @apply space-y-2.5 text-sm text-slate-500; }
+  .footer-link { @apply hover:text-slate-900 transition-colors; }
+  .social-link { @apply hover:text-slate-900 transition-colors; }
+  .footer-bar {
+    @apply pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 space-y-4 sm:space-y-0;
+  }
+  .legal-links { @apply flex items-center space-x-6; }
+}
+
+/* badge colors - tried doing this with tailwind but raw css was easier */
+.badge-blue {
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border-color: #e0f2fe;
+}
+.badge-green {
+  background-color: #ecfdf5;
+  color: #059669;
+  border-color: #d1fae5;
+}
+.badge-rose {
+  background-color: #fff1f2;
+  color: #e11d48;
+  border-color: #ffe4e6;
+}
+.badge-amber {
+  background-color: #fffbeb;
+  color: #b45309;
+  border-color: #fef3c7;
+}
+.badge-teal {
+  background-color: #f0fdfa;
+  color: #0d9488;
+  border-color: #ccfbf1;
+}
+.badge-default {
+  background-color: #f8fafc;
+  color: #475569;
+  border-color: #f1f5f9;
 }

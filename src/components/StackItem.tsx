@@ -9,19 +9,19 @@ interface StackItemProps {
 export const StackItem = ({ technology, onRemove }: StackItemProps) => {
   return (
     <div className="item-row">
-      <div className="item-details">
-        <div className="item-icon">
+      <div className="flex items-center space-x-3 min-w-0">
+        <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 p-1 flex items-center justify-center flex-shrink-0">
           <img
             src={technology.icon}
             alt={technology.name}
-            className="item-img"
+            className="w-6 h-6 object-contain"
           />
         </div>
-        <div className="item-meta">
-          <h4 className="item-name">
+        <div className="truncate">
+          <h4 className="text-sm font-bold text-slate-900 leading-tight truncate">
             {technology.name}
           </h4>
-          <p className="item-cat">
+          <p className="text-xs text-slate-400 font-medium">
             {technology.category}
           </p>
         </div>
@@ -29,9 +29,9 @@ export const StackItem = ({ technology, onRemove }: StackItemProps) => {
 
       <button
         onClick={() => onRemove(technology.id)}
-        className="item-remove"
+        className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1.5 rounded-lg transition-colors flex-shrink-0"
       >
-        <X className="remove-icon" />
+        <X className="w-4 h-4 stroke-[2]" />
       </button>
     </div>
   );

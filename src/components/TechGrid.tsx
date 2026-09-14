@@ -9,14 +9,14 @@ interface TechGridProps {
   onAddToStack: (tech: Technology) => void;
 }
 
-export const TechGrid = ({
+export function TechGrid({
   technologies,
   selectedTechs,
   isLoading,
   onAddToStack,
-}: TechGridProps) => {
+}: TechGridProps) {
   return (
-    <div className="tech-grid-wrapper">
+    <div className="space-y-6">
       <div>
         <h2 className="section-heading">
           Explore the <span className="gradient-text">Technologies</span>
@@ -27,9 +27,9 @@ export const TechGrid = ({
       </div>
 
       {isLoading ? (
-        <div className="tech-grid-loading">
-          <Loader2 className="loading-spinner" />
-          <p className="loading-text">
+        <div className="flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm space-y-4">
+          <Loader2 className="w-10 h-10 text-brand-pink animate-spin" />
+          <p className="text-slate-600 font-medium text-sm">
             Loading technology data...
           </p>
         </div>
@@ -39,7 +39,7 @@ export const TechGrid = ({
             <TechCard
               key={tech.id}
               technology={tech}
-              isAdded={selectedTechs.some((item) => item.id === tech.id)}
+              isAdded={selectedTechs.some((s) => s.id === tech.id)}
               onAddToStack={onAddToStack}
             />
           ))}
@@ -47,4 +47,4 @@ export const TechGrid = ({
       )}
     </div>
   );
-};
+}
