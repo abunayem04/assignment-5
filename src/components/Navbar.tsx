@@ -18,7 +18,6 @@ export const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-inner">
           
-          {/* hamburger for mobile */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -33,7 +32,6 @@ export const Navbar = () => {
             </button>
           </div>
 
-          {/* logo */}
           <div className="navbar-brand">
             <img src={logoIcon} alt="DevStack Logo" className="w-10 h-10 rounded-xl shadow-sm" />
             <div className="logo-title">
@@ -42,7 +40,6 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* desktop nav links */}
           <nav className="navbar-links">
             {links.map((link) => (
               <a
@@ -66,7 +63,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* mobile menu dropdown */}
       {menuOpen && (
         <div className="mobile-nav">
           {links.map((link) => (

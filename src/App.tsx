@@ -14,14 +14,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // small delay to show the loading spinner, feels nicer
     setTimeout(() => {
       setTechnologies(technologiesData as Technology[]);
       setIsLoading(false);
     }, 300);
   }, []);
 
-  // add tech to stack
   const handleAddToStack = (tech: Technology) => {
     const alreadyAdded = selectedTechs.find((t) => t.id === tech.id);
     
@@ -34,7 +32,6 @@ function App() {
     toast.success(`🎉 ${tech.name} added to your stack!`);
   };
 
-  // remove single tech
   function handleRemoveFromStack(id: string) {
     const techName = selectedTechs.find((t) => t.id === id);
     setSelectedTechs(selectedTechs.filter((t) => t.id !== id));
@@ -44,7 +41,6 @@ function App() {
     }
   }
 
-  // remove all at once
   function handleRemoveAll() {
     if (selectedTechs.length === 0) return;
 

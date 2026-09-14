@@ -7,7 +7,7 @@ export const Footer = () => {
         
         <div className="footer-grid">
           
-          {/* about col */}
+
           <div className="footer-about">
             <div className="flex items-center gap-2.5">
               <img src={logoIcon} alt="DevStack Logo" className="w-8 h-8 rounded-lg shadow-sm" />
@@ -34,7 +34,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* product links */}
+
           <div className="footer-col">
             <h4 className="col-heading">Product</h4>
             <ul className="col-links">
@@ -44,7 +44,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* company links */}
+
           <div className="footer-col">
             <h4 className="col-heading">Company</h4>
             <ul className="col-links">

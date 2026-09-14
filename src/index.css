@@ -9,7 +9,7 @@ body {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
-/* gradient stuff i use in multiple places */
+
 .gradient-text {
   background: linear-gradient(to right, #FF5E3A, #FF2A6D, #9B51E0);
   -webkit-background-clip: text;
@@ -24,7 +24,7 @@ body {
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
 }
 
-/* banner image hover zoom */
+
 .banner-img {
   width: 100%;
   height: auto;
@@ -46,7 +46,7 @@ body {
     @apply min-h-screen flex flex-col bg-[#FCFCFD];
   }
 
-  /* navbar */
+
   .navbar-header {
     @apply sticky top-0 z-50 backdrop-blur-md border-b border-slate-100 transition-all;
     background: rgba(255, 255, 255, 0.9);
@@ -69,7 +69,7 @@ body {
   .mobile-link { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors text-slate-700 hover:bg-slate-50 hover:text-slate-900; }
   .mobile-link-active { @apply block px-3 py-2.5 rounded-lg text-base font-medium transition-colors bg-rose-50 text-brand-pink font-semibold; }
 
-  /* hero section */
+
   .hero-section { @apply relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden; }
   .hero-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
   .hero-layout {
@@ -80,7 +80,7 @@ body {
     @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight;
   }
 
-  /* buttons */
+
   .btn-gradient {
     @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-white font-medium bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple hover:opacity-95 shadow-sm transition-all duration-200 active:scale-95 text-sm sm:text-base;
   }
@@ -88,7 +88,7 @@ body {
     @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-slate-700 font-medium bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 text-sm sm:text-base;
   }
 
-  /* technology section grid */
+
   .tech-section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16; }
   .main-grid { @apply grid grid-cols-1 lg:grid-cols-12 gap-8 items-start; }
   .content-area { @apply lg:col-span-8 xl:col-span-9 order-2 lg:order-1; }
@@ -98,7 +98,7 @@ body {
   .section-subtext { @apply text-sm sm:text-base text-slate-500 mt-2 font-normal; }
   .cards-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
 
-  /* tech card */
+
   .tech-card {
     @apply bg-white rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 border border-slate-100 shadow-sm hover:shadow-md;
   }
@@ -116,7 +116,7 @@ body {
     @apply w-full py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 bg-slate-100 text-slate-600 cursor-not-allowed border border-slate-200;
   }
 
-  /* sidebar / your stack */
+
   .sidebar {
     @apply bg-white rounded-3xl border border-slate-100 p-6 shadow-sm sticky top-28 self-start;
   }
@@ -128,7 +128,7 @@ body {
     @apply bg-white rounded-xl border border-slate-200/90 p-3 flex items-center justify-between shadow-sm transition-all hover:border-slate-300;
   }
 
-  /* footer */
+
   .footer-section {
     @apply border-t border-slate-100 bg-white pt-16 pb-12 mt-24;
   }
@@ -149,7 +149,7 @@ body {
   .legal-links { @apply flex items-center space-x-6; }
 }
 
-/* badge colors - tried doing this with tailwind but raw css was easier */
+
 .badge-blue {
   background-color: #f0f9ff;
   color: #0284c7;

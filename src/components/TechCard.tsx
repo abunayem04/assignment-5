@@ -13,7 +13,7 @@ export const TechCard = ({
   onAddToStack,
 }: TechCardProps) => {
 
-  // badge color based on text
+
   function getBadgeColor(badge: string) {
     if (badge === 'Popular' || badge === 'Top SQL' || badge === 'Essential' || badge === 'Containers' || badge === 'Robust') {
       return 'badge-blue';
@@ -55,7 +55,7 @@ export const TechCard = ({
       </div>
 
       <div>
-        {/* meta info row */}
+
         <div className="flex items-center justify-between text-xs pt-3 pb-5 border-t border-slate-50 text-slate-600">
           <span className="bg-slate-50 text-slate-700 font-medium px-2.5 py-1 rounded-md border border-slate-100">
             {technology.category}

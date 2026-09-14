@@ -28,7 +28,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* banner image */}
+
           <div className="w-full lg:w-auto flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm lg:max-w-md">
               <img
